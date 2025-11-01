@@ -15,6 +15,7 @@ export default function Home() {
   return <main className="bg-[url('/images/bg-main.svg')] bg-cover">
     
     <Navbar/>
+  
 
 
 
