@@ -1,0 +1,27 @@
+{
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": [
+          "apply",
+          "theme",
+          "utility",
+          "import",
+          "tailwind",
+          "layer",
+          "screen",
+          "keyframes",
+          "font-face",
+          "supports",
+          "document",
+          "page",
+          "counter-style",
+          "font-feature-values",
+          "property"
+        ]
+      }
+    ]
+  }
+}
