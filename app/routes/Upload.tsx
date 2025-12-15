@@ -6,6 +6,7 @@ import { convertPdfToImage } from '~/lib/pdftoimage';
 import { usePuterStore } from '~/lib/puter';
 import { generateUUID } from '~/lib/utils';
 import { prepareInstructions } from './constant';
+import Details from '~/component/Details';
 
 const USE_MOCK_AI = true; // set false when Puter AI works
 
@@ -17,9 +18,6 @@ const MOCK_FEEDBACK = {
   structure: { score: Math.floor(Math.random() * 10) + 50 },
   skills: { score: Math.floor(Math.random() * 10) + 70 }
 };
-
-
-
 
 
 
@@ -100,7 +98,7 @@ const upload = () => {
         setStatusText('Analysis complete! Redirecting...');
         console.log(data);
         navigate(`/resume/${uuid}`);
-
+        return <Details feedback={feedbackData} />;
 
 
     }
@@ -173,5 +171,6 @@ const upload = () => {
         </main>
     )
 }
+
 
 export default upload
