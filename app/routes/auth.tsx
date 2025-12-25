@@ -13,11 +13,12 @@ const Auth = () => {
   const next = location.search.split('next=')[1];
   const navigate = useNavigate();
 
-
-useEffect( () => {
-  if(auth.isAuthenticated) navigate(next)
-}, [auth.isAuthenticated, next])
-
+  useEffect(() => {
+    if (auth.isAuthenticated) {
+      navigate(next, { replace: true });
+    }
+  }, [auth.isAuthenticated, next, navigate]);
+  
   return (
    <main className="bg-[url('images/bg-main.svg')] bg-cover min-h-screen flex items-center justify-center">
     <div className="gradient-border shadow-lg">
